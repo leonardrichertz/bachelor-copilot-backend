@@ -6,9 +6,11 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\WeatherController;
 use App\Http\Controllers\LocationController;
 
-Route::post('/login', [AuthController::class, 'login']);
 
-Route::middleware('auth:sanctum')->group(function () {
+
+Route::middleware(['throttle:2,1'])->post('/login', [AuthController::class, 'login']);
+
+Route::middleware(['auth:sanctum', 'throttle:2,1'])->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
