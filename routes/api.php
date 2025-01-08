@@ -8,9 +8,9 @@ use App\Http\Controllers\LocationController;
 
 
 
-Route::middleware(['throttle:2,1'])->post('/login', [AuthController::class, 'login']);
+Route::middleware(['throttle:5,1'])->post('/login', [AuthController::class, 'login']);
 
-Route::middleware(['auth:sanctum', 'throttle:2,1'])->group(function () {
+Route::middleware(['auth:sanctum', 'throttle:5,1'])->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
