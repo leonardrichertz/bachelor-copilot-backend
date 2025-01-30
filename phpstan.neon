@@ -1,0 +1,5 @@
+parameters:
+  level: max   # Enforce the highest level of static analysis (strictest rules)
+  paths:
+    - app      # Scan the app folder for issues
+    - routes   # Scan the routes folder for issues
