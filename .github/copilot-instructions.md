@@ -1,6 +1,7 @@
 This Laravel application should serve as a REST-Api, which delivers data to our React.js frontend.
 
-The user uses a bearer token for all routes except the login route, which has to get checked before data is returned.
+The user uses a bearer token for all routes except the login route,
+which has to get checked before data is returned.
 
 Return data in JSON format.
 
